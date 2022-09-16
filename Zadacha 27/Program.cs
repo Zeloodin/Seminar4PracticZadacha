@@ -23,50 +23,29 @@ int Expanding_numbers_into_a_sum(int numbers)
     return sum;
 }
 
-// error C S8112: Локальная функция "InputNumber()" должна объявить тело,
-// так как она не помечена как "static extern".
-
-
-// string InputNumber();
-// {
-//     int number;
-//     while(true)
-//     {
-//         try
-//         {
-//             Console.Write("Введите число: ");
-//             number = Convert.ToInt32(Console.ReadLine());
-//             break;
-//         }
-//         catch(System.FormatException)
-//         {
-//             Console.WriteLine("Ошибка!");
-//         }
-//         catch(System.OverflowException)
-//         {
-//             Console.WriteLine("Ошибка!");
-//         }
-//     }
-//     return number;
-// }
-
-int number;
-while(true)
+int InputNumber()
 {
-    try
+    int number;
+    while(true)
     {
-        Console.Write("Введите число: ");
-        number = Convert.ToInt32(Console.ReadLine());
-        break;
+        try
+        {
+            Console.Write("Введите число: ");
+            number = Convert.ToInt32(Console.ReadLine());
+            break;
+        }
+        catch(System.FormatException)
+        {
+            Console.WriteLine("Ошибка!");
+        }
+        catch(System.OverflowException)
+        {
+            Console.WriteLine("Ошибка!");
+        }
     }
-    catch(System.FormatException)
-    {
-        Console.WriteLine("Ошибка!");
-    }
-    catch(System.OverflowException)
-    {
-        Console.WriteLine("Ошибка!");
-    }
+    return number;
 }
 
-Console.WriteLine(Expanding_numbers_into_a_sum(number));
+
+
+Console.WriteLine(Expanding_numbers_into_a_sum(InputNumber()));
